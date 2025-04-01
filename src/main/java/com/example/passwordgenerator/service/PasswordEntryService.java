@@ -26,13 +26,13 @@ public class PasswordEntryService {
         return passwordEntryRepository.findById(id);
     }
 
-    // Новый метод для поиска по owner
+   
     public Optional<PasswordEntry> findByOwner(String owner) {
         return passwordEntryRepository.findByOwner(owner);
     }
 
     public PasswordEntry create(PasswordEntry entry) {
-        // Хэшируем пароль перед сохранением в БД
+        
         String plainPassword = entry.getPassword();
         String hashedPassword = passwordEncoder.encode(plainPassword);
         entry.setPassword(hashedPassword);
@@ -40,7 +40,7 @@ public class PasswordEntryService {
     }
 
     public PasswordEntry update(PasswordEntry entry) {
-        // При обновлении также хэшируем пароль
+       
         String plainPassword = entry.getPassword();
         String hashedPassword = passwordEncoder.encode(plainPassword);
         entry.setPassword(hashedPassword);
@@ -51,7 +51,7 @@ public class PasswordEntryService {
         passwordEntryRepository.deleteById(id);
     }
 
-    // Метод для проверки пароля
+
     public boolean verifyPassword(Long id, String plainPassword) {
         Optional<PasswordEntry> entryOpt = passwordEntryRepository.findById(id);
         if (entryOpt.isPresent()) {
