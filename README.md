@@ -134,19 +134,25 @@ password_generator_lab2/
 │   │   ├── java/com/example/passwordgenerator/
 
 │   │   │   ├── config/
-│   │   │   │   ├── SecurityConfig.java      
+
+│   │   │   │   ├── SecurityConfig.java  
+
 │   │   │   │   ├── AppConfig.java     
 
 │   │   │   ├── controller/
+
 │   │   │   │   ├── PasswordController.java  
 
 │   │   │   ├── model/
+
 │   │   │   │   ├── PasswordEntry.java      
 
 │   │   │   ├── repository/
+
 │   │   │   │   ├── PasswordRepository.java 
 
 │   │   │   ├── service/
+
 │   │   │   │   ├── PasswordService.java     
 
 │   │   │   ├── PasswordGeneratorApplication.java 
