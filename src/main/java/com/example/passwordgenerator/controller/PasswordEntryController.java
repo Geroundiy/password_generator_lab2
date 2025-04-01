@@ -47,9 +47,7 @@ public class PasswordEntryController {
         return ResponseEntity.noContent().build();
     }
 
-    // Новый эндпоинт для проверки пароля с дополнительным параметром "check"
-    // Пример запроса: GET /api/password/entries/verify?id=1&plainPassword=123456&check=1
-    // Если check=0, проверка не производится, если check=1 – производится проверка с хэшированием
+
     @GetMapping("/verify")
     public ResponseEntity<String> verifyPassword(@RequestParam Long id,
                                                  @RequestParam String plainPassword,
