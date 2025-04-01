@@ -1,7 +1,11 @@
 package com.example.passwordgenerator.service;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
 import java.security.SecureRandom;
 
+@Service
 public class PasswordService {
     private static final String NUMBERS = "0123456789";
     private static final String LETTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -26,5 +30,11 @@ public class PasswordService {
         }
 
         return password.toString();
+    }
+
+    // Метод для проверки пароля с использованием BCryptPasswordEncoder
+    public boolean verifyPassword(String plainPassword, String hashedPassword) {
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        return encoder.matches(plainPassword, hashedPassword);
     }
 }
