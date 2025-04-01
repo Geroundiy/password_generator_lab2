@@ -128,20 +128,29 @@ _Параметры:_
 
 password_generator_lab2/
 │-- src/
+
 │   ├── main/
+
 │   │   ├── java/com/example/passwordgenerator/
+
 │   │   │   ├── config/
 │   │   │   │   ├── SecurityConfig.java      
-│   │   │   │   ├── AppConfig.java           
+│   │   │   │   ├── AppConfig.java     
+
 │   │   │   ├── controller/
 │   │   │   │   ├── PasswordController.java  
+
 │   │   │   ├── model/
 │   │   │   │   ├── PasswordEntry.java      
+
 │   │   │   ├── repository/
 │   │   │   │   ├── PasswordRepository.java 
+
 │   │   │   ├── service/
 │   │   │   │   ├── PasswordService.java     
+
 │   │   │   ├── PasswordGeneratorApplication.java 
+
 │   ├── resources/
 │   │   ├── application.properties           
 │   │   ├── static/                        
