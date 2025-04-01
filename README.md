@@ -124,3 +124,31 @@ _Параметры:_
 -----------------------------------------------------
 После генерации пароля в консольном режиме приложение предлагает опцию проверки пароля. Если выбрать проверку (ввести 1), приложение запросит пароль для сравнения с хранимым значением в базе данных. При совпадении выводится сообщение: "Пароль совпадает с тем, что хранится в БД", иначе – "Пароль не совпадает с тем, что хранится в БД".
 
+Структура:
+password_generator_lab2/
+│-- src/
+│   ├── main/
+│   │   ├── java/com/example/passwordgenerator/
+│   │   │   ├── config/
+│   │   │   │   ├── SecurityConfig.java      
+│   │   │   │   ├── AppConfig.java           
+│   │   │   ├── controller/
+│   │   │   │   ├── PasswordController.java  
+│   │   │   ├── model/
+│   │   │   │   ├── PasswordEntry.java      
+│   │   │   ├── repository/
+│   │   │   │   ├── PasswordRepository.java 
+│   │   │   ├── service/
+│   │   │   │   ├── PasswordService.java     
+│   │   │   ├── PasswordGeneratorApplication.java 
+│   ├── resources/
+│   │   ├── application.properties           
+│   │   ├── static/                        
+│   │   ├── templates/                       
+│   ├── test/java/com/example/passwordgenerator/
+│   │   ├── PasswordServiceTest.java         
+│   │   ├── PasswordControllerTest.java     
+│-- .gitignore                               
+│-- pom.xml                                 
+│-- README.md                                 
+
