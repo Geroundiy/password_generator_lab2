@@ -49,16 +49,16 @@ public class PasswordGeneratorApplication implements CommandLineRunner {
 
         String password = passwordService.generatePassword(length, complexity);
         PasswordEntry entry = new PasswordEntry(password, owner);
-        // Сохраняем пароль в БД и получаем объект с присвоенным ID
+       
         entry = passwordEntryService.create(entry);
 
         System.out.println("\n✅ Ваш сгенерированный пароль: " + password);
 
-        // Новый пункт меню для проверки пароля с БД
+     
         System.out.println("\nПроверить пароль с БД? (0 - нет, 1 - да): ");
         int check = scanner.nextInt();
         if (check == 1) {
-            scanner.nextLine(); // очистка буфера после nextInt()
+            scanner.nextLine();
             System.out.print("Введите пароль для проверки: ");
             String checkPassword = scanner.nextLine();
             boolean match = passwordEntryService.verifyPassword(entry.getId(), checkPassword);
