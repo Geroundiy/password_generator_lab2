@@ -1,4 +1,6 @@
+Вот полное содержание обновленного файла `README.md`, готовое для копирования и вставки без изменений:
 
+```markdown
 # Генератор паролей
 
 ## Описание
@@ -106,17 +108,17 @@
 
 ### 5.3 CRUD-операции для PasswordEntry (PasswordEntryController)
 
-- **Получение всех записей**:
+- **Получение всех записей**:  
   `GET /api/password/entries`
-- **Получение записи по ID**:
+- **Получение записи по ID**:  
   `GET /api/password/entries/{id}`
-- **Создание новой записи**:
-  `POST /api/password/entries`
+- **Создание новой записи**:  
+  `POST /api/password/entries`  
   *Тело запроса*: JSON-объект с данными записи.
-- **Обнов LENние записи**:
-  `PUT /api/password/entries/{id}`
+- **Обнов LENние записи**:  
+  `PUT /api/password/entries/{id}`  
   *Тело запроса*: JSON-объект с обновленными данными.
-- **Удаление записи**:
+- **Удаление записи**:  
   `DELETE /api/password/entries/{id}`
 
 ### 5.4 Проверка пароля с параметром `check` (PasswordEntryController)
@@ -131,11 +133,11 @@
 
 ## Пример использования REST API
 
-- **Генерация пароля**:
+- **Генерация пароля**:  
   ```
   http://localhost:8080/api/password/generate?length=12&complexity=2&owner=Ivan
   ```
-- **Проверка пароля**:
+- **Проверка пароля**:  
   ```
   http://localhost:8080/api/password/verify?owner=Ivan&password=введённыйПароль
   ```
