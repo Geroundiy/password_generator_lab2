@@ -2,6 +2,7 @@ package com.example.passwordgenerator.controller;
 
 import com.example.passwordgenerator.entity.PasswordEntry;
 import com.example.passwordgenerator.service.PasswordEntryService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -47,22 +48,14 @@ public class PasswordEntryController {
         return ResponseEntity.noContent().build();
     }
 
-
     @GetMapping("/verify")
     public ResponseEntity<String> verifyPassword(@RequestParam Long id,
-                                                 @RequestParam String plainPassword,
-                                                 @RequestParam int check) {
-        if (check == 0) {
-            return ResponseEntity.ok("Проверка не выполнена, так как параметр check равен 0");
-        } else if (check == 1) {
-            try {
-                boolean isMatch = passwordEntryService.verifyPassword(id, plainPassword);
-                return ResponseEntity.ok(isMatch ? "Пароль совпадает" : "Пароль не совпадает");
-            } catch (IllegalArgumentException e) {
-                return ResponseEntity.notFound().build();
-            }
-        } else {
-            return ResponseEntity.badRequest().body("Неверное значение параметра check. Используйте 0 или 1.");
+                                                 @RequestParam String plainPassword) {
+        try {
+            boolean isMatch = passwordEntryService.verifyPassword(id, plainPassword);
+            return ResponseEntity.ok(isMatch ? "Пароль совпадает" : "Пароль не совпадает");
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Запись с указанным ID не найдена");
         }
     }
 }
